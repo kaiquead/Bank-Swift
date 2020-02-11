@@ -10,17 +10,14 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    //view to add Items
-    @IBOutlet weak var vInputItem: UIView!
     //textField get the item to add
-    @IBOutlet weak var tfItem: UITextField!
     var bank: [Bank] = []
-    @IBOutlet weak var tfInformations: UITextField!
     @IBOutlet weak var lbInformations: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        navigationController?.setNavigationBarHidden(true, animated: true)
         REST.loadBank(onComplete: { (bank) in
             self.bank = bank
             DispatchQueue.main.sync { //coloca na thread principal
@@ -40,20 +37,13 @@ class ViewController: UIViewController {
             }*/
         }
     }
-
     
     
-    @IBAction func btnCreateItem(_ sender: Any) {
-        vInputItem.isHidden = false
+    @IBAction func ReturnLogin(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func btnAdd(_ sender: Any) {
-        
-    }
     
-    @IBAction func btnReturn(_ sender: Any) {
-        vInputItem.isHidden = true
-    }
 }
 
 
