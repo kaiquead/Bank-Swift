@@ -84,11 +84,18 @@ class REST{
         request.httpBody = json
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if error == nil{
-                guard let response = response as? HTTPURLResponse, response.statusCode==200, let _ = data else{
+                guard let response = response as? HTTPURLResponse,  let _ = data else{
                     onComplete(false)
                     return
                 }
-                onComplete(true)
+                if(response.statusCode==200){
+                    print (response.statusCode)
+                    onComplete(true)
+                }
+                else{
+                    print (response.statusCode)
+                    onComplete(false)
+                }
                 
             } else{
                 onComplete(false)

@@ -12,7 +12,8 @@ class LoginViewController: UIViewController {
 
     
     var bank: Bank!
-    @IBOutlet weak var tfLogin: UITextField!
+    
+    @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     
     override func viewDidLoad() {
@@ -29,7 +30,7 @@ class LoginViewController: UIViewController {
         if bank == nil {
             bank = Bank()
         }
-        bank.owner = tfLogin.text!
+        bank.account = integer(from: tfAccount)
         bank.password = tfPassword.text!
         
         REST.login(bank: bank) { (sucess) in
@@ -41,6 +42,9 @@ class LoginViewController: UIViewController {
             }
             else {
                 print ("false")
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "segueErrorLogin", sender: nil)
+                }
                 
             }
             
@@ -48,4 +52,10 @@ class LoginViewController: UIViewController {
     }
     
 
+    func integer(from textField: UITextField) -> Int {
+        guard let text = textField.text, let number = Int(text) else {
+            return 0
+        }
+        return number
+    }
 }

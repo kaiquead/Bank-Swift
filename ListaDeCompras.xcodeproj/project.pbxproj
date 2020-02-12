@@ -17,6 +17,7 @@
 		EE54AD4823DFABFF00499013 /* REST.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD4723DFABFF00499013 /* REST.swift */; };
 		EE54AD4E23EF2B8500499013 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD4D23EF2B8500499013 /* LoginViewController.swift */; };
 		EE54AD5023F2362000499013 /* SaqueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD4F23F2362000499013 /* SaqueViewController.swift */; };
+		EE54AD5223F4B62A00499013 /* ErrorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		EE54AD4723DFABFF00499013 /* REST.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = REST.swift; sourceTree = "<group>"; };
 		EE54AD4D23EF2B8500499013 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		EE54AD4F23F2362000499013 /* SaqueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaqueViewController.swift; sourceTree = "<group>"; };
+		EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				EE54AD3323DC8FD300499013 /* SceneDelegate.swift */,
 				EE54AD3523DC8FD300499013 /* ViewController.swift */,
 				EE54AD3723DC8FD300499013 /* Main.storyboard */,
+				EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */,
 				EE54AD4F23F2362000499013 /* SaqueViewController.swift */,
 				EE54AD4523DFAA8D00499013 /* Bank.swift */,
 				EE54AD4723DFABFF00499013 /* REST.swift */,
@@ -153,6 +156,7 @@
 				EE54AD4E23EF2B8500499013 /* LoginViewController.swift in Sources */,
 				EE54AD3623DC8FD300499013 /* ViewController.swift in Sources */,
 				EE54AD4623DFAA8D00499013 /* Bank.swift in Sources */,
+				EE54AD5223F4B62A00499013 /* ErrorLoginViewController.swift in Sources */,
 				EE54AD3223DC8FD300499013 /* AppDelegate.swift in Sources */,
 				EE54AD4823DFABFF00499013 /* REST.swift in Sources */,
 				EE54AD5023F2362000499013 /* SaqueViewController.swift in Sources */,

@@ -51,6 +51,38 @@
             </objects>
             <point key="canvasLocation" x="1077.5999999999999" y="129.98500749625188"/>
         </scene>
+        <!--Error Login View Controller-->
+        <scene sceneID="ZKb-PW-v6z">
+            <objects>
+                <viewController id="Rxp-Ma-Eyv" customClass="ErrorLoginViewController" customModule="ListaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WEm-XZ-DvF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conta não encontrada!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WWs-nA-hSa">
+                                <rect key="frame" x="74" y="213" width="227" height="28"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnL-YQ-oR8">
+                                <rect key="frame" x="125" y="308" width="124" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Tentar novamente"/>
+                                <connections>
+                                    <action selector="returnLogin:" destination="Rxp-Ma-Eyv" eventType="touchUpInside" id="zQi-i3-Vti"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="0.72560373690111846" blue="0.35267847920590567" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="KSC-bh-HCZ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksJ-aI-6if" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="233" y="822"/>
+        </scene>
         <!--Saque View Controller-->
         <scene sceneID="Z4x-Ih-LiT">
             <objects>
@@ -114,8 +146,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" textContentType="password"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-9g-JPS">
-                                <rect key="frame" x="157" y="216" width="60" height="27"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Conta" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-9g-JPS">
+                                <rect key="frame" x="157" y="216" width="65" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -155,9 +187,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="AxT-HC-1j6"/>
                     <connections>
-                        <outlet property="tfLogin" destination="3rV-YO-buM" id="bOC-Gn-piw"/>
+                        <outlet property="tfAccount" destination="3rV-YO-buM" id="WhG-J1-dLe"/>
                         <outlet property="tfPassword" destination="xkP-qv-61e" id="0w1-Px-2Cv"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="firstSegue" id="kus-Vu-NGi"/>
+                        <segue destination="Rxp-Ma-Eyv" kind="presentation" identifier="segueErrorLogin" id="JKR-LN-gIo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fir-85-CsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
