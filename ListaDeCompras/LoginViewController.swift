@@ -10,23 +10,42 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    
+    var bank: Bank!
+    @IBOutlet weak var tfLogin: UITextField!
+    @IBOutlet weak var tfPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
     
     @IBAction func showFirstScreen(_ sender: UIStoryboardSegue) {
-        performSegue(withIdentifier: "firstSegue", sender: nil)
+        //performSegue(withIdentifier: "firstSegue", sender: nil)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func loginAdd(_ sender: Any) {
+        if bank == nil {
+            bank = Bank()
+        }
+        bank.owner = tfLogin.text!
+        bank.password = tfPassword.text!
+        
+        REST.login(bank: bank) { (sucess) in
+            if sucess == true{
+                print ("true")
+                DispatchQueue.main.async {
+                    self.performSegue(withIdentifier: "firstSegue", sender: nil)
+                }
+            }
+            else {
+                print ("false")
+                
+            }
+            
+        }
     }
-    */
+    
 
 }

@@ -137,6 +137,7 @@
                                     <color key="titleColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginAdd:" destination="bZ0-hn-GoD" eventType="touchUpInside" id="4bZ-1v-MRw"/>
                                     <action selector="showFirstScreen:" destination="bZ0-hn-GoD" eventType="touchUpInside" id="Bg2-rt-z76"/>
                                 </connections>
                             </button>
@@ -154,6 +155,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="AxT-HC-1j6"/>
                     <connections>
+                        <outlet property="tfLogin" destination="3rV-YO-buM" id="bOC-Gn-piw"/>
+                        <outlet property="tfPassword" destination="xkP-qv-61e" id="0w1-Px-2Cv"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="firstSegue" id="kus-Vu-NGi"/>
                     </connections>
                 </viewController>

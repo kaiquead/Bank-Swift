@@ -10,12 +10,12 @@ import Foundation
 
 class Bank: Codable{
     
-        var value: Double
-        var _id: String
-        var account: Int
-        var owner: String
-        var password: String
-        var __v: Int
+    var value: Double = 0.0
+    var _id: String?
+    var account: Int = 0
+    var owner: String = ""
+    var password: String = ""
+    var __v: Int?
     
     }
 
