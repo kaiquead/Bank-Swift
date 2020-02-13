@@ -10,7 +10,7 @@
         <!--Bem Vindo ao iBank-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="ListaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +54,7 @@
         <!--Error Login View Controller-->
         <scene sceneID="ZKb-PW-v6z">
             <objects>
-                <viewController id="Rxp-Ma-Eyv" customClass="ErrorLoginViewController" customModule="ListaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Rxp-Ma-Eyv" customClass="ErrorLoginViewController" customModule="Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WEm-XZ-DvF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -86,7 +86,7 @@
         <!--Saque View Controller-->
         <scene sceneID="Z4x-Ih-LiT">
             <objects>
-                <viewController id="Ha3-NB-9c9" customClass="SaqueViewController" customModule="ListaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ha3-NB-9c9" customClass="SaqueViewController" customModule="Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3bG-j5-DkC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -129,7 +129,7 @@
         <!--Login View Controller-->
         <scene sceneID="qxK-sA-nLt">
             <objects>
-                <viewController id="bZ0-hn-GoD" customClass="LoginViewController" customModule="ListaDeCompras" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="bZ0-hn-GoD" customClass="LoginViewController" customModule="Bank" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="S4v-XP-0Qz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
