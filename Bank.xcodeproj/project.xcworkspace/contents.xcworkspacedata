@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:ListaDeCompras.xcodeproj">
+      location = "self:/Users/kaiquealves/Desktop/IOS-Dev/ListaDeCompras/Bank.xcodeproj">
    </FileRef>
 </Workspace>

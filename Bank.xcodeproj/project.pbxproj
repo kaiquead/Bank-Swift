@@ -21,7 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		EE54AD2E23DC8FD300499013 /* ListaDeCompras.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ListaDeCompras.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE54AD2E23DC8FD300499013 /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE54AD3123DC8FD300499013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE54AD3323DC8FD300499013 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE54AD3523DC8FD300499013 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,7 +50,7 @@
 		EE54AD2523DC8FD300499013 = {
 			isa = PBXGroup;
 			children = (
-				EE54AD3023DC8FD300499013 /* ListaDeCompras */,
+				EE54AD3023DC8FD300499013 /* Bank */,
 				EE54AD2F23DC8FD300499013 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,12 +58,12 @@
 		EE54AD2F23DC8FD300499013 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE54AD2E23DC8FD300499013 /* ListaDeCompras.app */,
+				EE54AD2E23DC8FD300499013 /* Bank.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		EE54AD3023DC8FD300499013 /* ListaDeCompras */ = {
+		EE54AD3023DC8FD300499013 /* Bank */ = {
 			isa = PBXGroup;
 			children = (
 				EE54AD4D23EF2B8500499013 /* LoginViewController.swift */,
@@ -79,15 +79,15 @@
 				EE54AD3C23DC8FD500499013 /* LaunchScreen.storyboard */,
 				EE54AD3F23DC8FD500499013 /* Info.plist */,
 			);
-			path = ListaDeCompras;
+			path = Bank;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		EE54AD2D23DC8FD300499013 /* ListaDeCompras */ = {
+		EE54AD2D23DC8FD300499013 /* Bank */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EE54AD4223DC8FD500499013 /* Build configuration list for PBXNativeTarget "ListaDeCompras" */;
+			buildConfigurationList = EE54AD4223DC8FD500499013 /* Build configuration list for PBXNativeTarget "Bank" */;
 			buildPhases = (
 				EE54AD2A23DC8FD300499013 /* Sources */,
 				EE54AD2B23DC8FD300499013 /* Frameworks */,
@@ -97,9 +97,9 @@
 			);
 			dependencies = (
 			);
-			name = ListaDeCompras;
+			name = Bank;
 			productName = ListaDeCompras;
-			productReference = EE54AD2E23DC8FD300499013 /* ListaDeCompras.app */;
+			productReference = EE54AD2E23DC8FD300499013 /* Bank.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -117,7 +117,7 @@
 					};
 				};
 			};
-			buildConfigurationList = EE54AD2923DC8FD300499013 /* Build configuration list for PBXProject "ListaDeCompras" */;
+			buildConfigurationList = EE54AD2923DC8FD300499013 /* Build configuration list for PBXProject "Bank" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,7 +130,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				EE54AD2D23DC8FD300499013 /* ListaDeCompras */,
+				EE54AD2D23DC8FD300499013 /* Bank */,
 			);
 		};
 /* End PBXProject section */
@@ -305,13 +305,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ListaDeCompras/Info.plist;
+				INFOPLIST_FILE = Bank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaiquealves.ListaDeCompras;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaiquealves.Bank;
+				PRODUCT_NAME = Bank;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -322,13 +322,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = ListaDeCompras/Info.plist;
+				INFOPLIST_FILE = Bank/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.kaiquealves.ListaDeCompras;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.kaiquealves.Bank;
+				PRODUCT_NAME = Bank;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -337,7 +337,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		EE54AD2923DC8FD300499013 /* Build configuration list for PBXProject "ListaDeCompras" */ = {
+		EE54AD2923DC8FD300499013 /* Build configuration list for PBXProject "Bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE54AD4023DC8FD500499013 /* Debug */,
@@ -346,7 +346,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EE54AD4223DC8FD500499013 /* Build configuration list for PBXNativeTarget "ListaDeCompras" */ = {
+		EE54AD4223DC8FD500499013 /* Build configuration list for PBXNativeTarget "Bank" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EE54AD4323DC8FD500499013 /* Debug */,
