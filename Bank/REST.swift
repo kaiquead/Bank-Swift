@@ -19,9 +19,7 @@ enum BankError{
 
 
 class REST{
-    
-
-    private static let basePath = "https://simple-bank.herokuapp.com/bank"
+    private static let basePath = "https://simple-bank.herokuapp.com/bank/:"
     private static let basePathLogin = "https://simple-bank.herokuapp.com/auth"
     private static let basePathCreateAccount = "https://simple-bank.herokuapp.com/bank/create"
     

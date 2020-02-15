@@ -36,6 +36,7 @@ class LoginViewController: UIViewController {
         REST.login(bank: bank) { (sucess) in
             if sucess == true{
                 print ("true")
+                var actualAccount = ActualAccount(actualAccount: self.integer(from: self.tfAccount))
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "firstSegue", sender: nil)
                 }
