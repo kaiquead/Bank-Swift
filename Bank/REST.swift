@@ -23,6 +23,7 @@ class REST{
 
     private static let basePath = "https://simple-bank.herokuapp.com/bank"
     private static let basePathLogin = "https://simple-bank.herokuapp.com/auth"
+    private static let basePathCreateAccount = "https://simple-bank.herokuapp.com/bank/create"
     
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
@@ -103,6 +104,43 @@ class REST{
         }
         dataTask.resume()
     }
+    
+    class func createAccount (bank: Bank, onComplete: @escaping (Bool)->Void){
+        guard let url = URL(string: basePathCreateAccount) else {
+        onComplete(false)
+        return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let json = try? JSONEncoder().encode(bank) else {
+            onComplete(false)
+            return
+        }
+        
+        request.httpBody = json
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            if error == nil{
+                guard let response = response as? HTTPURLResponse,  let _ = data else{
+                    onComplete(false)
+                    return
+                }
+                if(response.statusCode==200){
+                    print (response.statusCode)
+                    onComplete(true)
+                }
+                else{
+                    print (response.statusCode)
+                    onComplete(false)
+                }
+                
+            } else{
+                onComplete(false)
+            }
+        }
+        dataTask.resume()
+    }
+    
     
 }
 
