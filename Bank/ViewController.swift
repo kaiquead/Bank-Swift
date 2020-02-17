@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     //textField get the item to add
     var bank: [Bank] = []
+    var account: ActualAccount!
     @IBOutlet weak var lbInformations: UILabel!
     
     override func viewDidLoad() {
@@ -31,7 +32,7 @@ class ViewController: UIViewController {
             
         }) { (error) in
             print(error)
-   /*         switch error{
+         /* switch error{
             case .invalidJSON
                 print ("JSON inválido")
             }*/

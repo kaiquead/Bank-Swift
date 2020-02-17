@@ -12,6 +12,7 @@ class LoginViewController: UIViewController {
 
     
     var bank: Bank!
+    var account: ActualAccount!
     
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
@@ -30,13 +31,17 @@ class LoginViewController: UIViewController {
         if bank == nil {
             bank = Bank()
         }
+        if account == nil{
+            account = ActualAccount()
+        }
+        
         bank.account = integer(from: tfAccount)
         bank.password = tfPassword.text!
+        account.actualAccount = integer(from: tfAccount)
         
         REST.login(bank: bank) { (sucess) in
             if sucess == true{
                 print ("true")
-                var actualAccount = ActualAccount(actualAccount: self.integer(from: self.tfAccount))
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "firstSegue", sender: nil)
                 }
