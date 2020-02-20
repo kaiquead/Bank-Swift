@@ -13,7 +13,6 @@ class LoginViewController: UIViewController {
     
     var bank: Bank!
     var account: ActualAccount!
-    
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     

@@ -11,7 +11,7 @@ import UIKit
 class ViewController: UIViewController {
 
     //textField get the item to add
-    var bank: [Bank] = []
+    var bank: Bank!
     var account: ActualAccount!
     @IBOutlet weak var lbInformations: UILabel!
     
@@ -19,14 +19,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.setNavigationBarHidden(true, animated: true)
-        REST.loadBank(onComplete: { (bank) in
+        REST.loadAnAccount(onComplete: { (bank) in
             self.bank = bank
             DispatchQueue.main.sync { //coloca na thread principal
-                var informations: String = ""
-                for i in bank{
-                    informations = informations + String(i.account) + i.owner + i.password + String(i.value) + "    "
-                }
-                self.lbInformations.text = informations
+                self.lbInformations.text = bank.owner
+                
             }
         
             
