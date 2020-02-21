@@ -44,7 +44,7 @@ class REST{
     
     
 
-    private static var session = URLSession(configuration: configuration)          //poderia usar o URLSession.shared
+    private static var session = URLSession(configuration: configuration)          //poderia uusar o URLSession.shared
     
     class func loadBank(onComplete: @escaping ([Bank])->Void, onError: @escaping(BankError) ->Void){
         guard let url = URL(string: basePath) else {
