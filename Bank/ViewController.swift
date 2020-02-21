@@ -14,6 +14,9 @@ class ViewController: UIViewController {
     var bank: Bank!
     var account: ActualAccount!
     @IBOutlet weak var lbInformations: UILabel!
+    @IBOutlet weak var lbAccount: UILabel!
+    @IBOutlet weak var lbSaldo: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,8 @@ class ViewController: UIViewController {
             self.bank = bank
             DispatchQueue.main.sync { //coloca na thread principal
                 self.lbInformations.text = bank.owner
-                
+                self.lbAccount.text = "Conta: " + String(bank.account)
+                self.lbSaldo.text = " Saldo: R$ " + String(bank.value)
             }
         
             

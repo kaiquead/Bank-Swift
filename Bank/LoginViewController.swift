@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     var account: ActualAccount!
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
+    @IBOutlet weak var btnShowPassword: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +33,16 @@ class LoginViewController: UIViewController {
         }
         if account == nil{
             account = ActualAccount()
+        }
+        if tfAccount.text == "" || tfPassword.text == ""{
+            let alert = UIAlertController(title: "Erro para entrar", message: "Conta ou Senha em branco. Preencha com valores válidos!", preferredStyle: .alert)
+                 let ok = UIAlertAction(title: "Voltar", style: .default, handler: { action in
+                 })
+                 alert.addAction(ok)
+                 DispatchQueue.main.async(execute: {
+                    self.present(alert, animated: true)
+            })
+            return
         }
         
         bank.account = integer(from: tfAccount)
@@ -54,6 +65,19 @@ class LoginViewController: UIViewController {
             }
             
         }
+    }
+    
+    
+    @IBAction func showPassword(_ sender: Any) {
+        if self.tfPassword.isSecureTextEntry == false{
+            self.tfPassword.isSecureTextEntry = true
+            self.btnShowPassword.setTitle("Mostrar", for: .normal)
+        }
+        else{
+            self.tfPassword.isSecureTextEntry = false
+            self.btnShowPassword.setTitle("Esconder", for: .normal)
+        }
+        
     }
     
 
