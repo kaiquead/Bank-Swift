@@ -36,7 +36,7 @@ class LoginViewController: UIViewController {
         
         bank.account = integer(from: tfAccount)
         bank.password = tfPassword.text!
-        account.actualAccount = integer(from: tfAccount)
+        account.setActualAccount(account: integer(from: tfAccount))
         
         REST.login(bank: bank) { (sucess) in
             if sucess == true{

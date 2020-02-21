@@ -19,12 +19,12 @@ enum BankError{
 
 
 class REST{
-    var account: ActualAccount!
+    private static var account = ActualAccount()
     private static var token: String = ""
     private static let basePath = "https://simple-bank.herokuapp.com/bank"
     private static let basePathLogin = "https://simple-bank.herokuapp.com/auth"
     private static let basePathCreateAccount = "https://simple-bank.herokuapp.com/bank/create"
-    private static let basePathAnAccount = "https://simple-bank.herokuapp.com/bank/4483"
+    private static let basePathAnAccount = "https://simple-bank.herokuapp.com/bank/"
     
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
@@ -81,7 +81,7 @@ class REST{
     }
     
     class func loadAnAccount(onComplete: @escaping (Bank)->Void, onError: @escaping(BankError) ->Void){
-        guard let url = URL(string: basePathAnAccount) else {
+        guard let url = URL(string: basePathAnAccount + String(account.getActualAccount())) else {
             onError(.url)
             return}
         

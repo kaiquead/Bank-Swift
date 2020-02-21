@@ -9,17 +9,17 @@
 import Foundation
 
 class ActualAccount{
-    var actualAccount = -1
+    private static var actualAccount: Int = -1
     
-//    init(actualAccount: Int) {
-  //      self.actualAccount = actualAccount
-    //}
+    init() {
+        ActualAccount.self.actualAccount = ActualAccount.self.actualAccount
+    }
     
     func getActualAccount()->Int{
-        return self.actualAccount
+        return ActualAccount.self.actualAccount
     }
     
     func setActualAccount(account: Int)->Void{
-        self.actualAccount = account
+        ActualAccount.self.actualAccount = account
     }
 }
