@@ -12,7 +12,9 @@ class CreateAccountViewController: UIViewController {
 
     @IBOutlet weak var tfOwner: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
-    var bank:Bank!
+    @IBOutlet weak var tfEmail: UITextField!
+    
+    var bank:CreateAccBank!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +25,11 @@ class CreateAccountViewController: UIViewController {
 
     @IBAction func btnCreate(_ sender: Any) {
         if bank == nil {
-            bank = Bank()
+            bank = CreateAccBank()
         }
         bank.owner = tfOwner.text!
         bank.password = tfPassword.text!
-        
+        bank.email = tfEmail.text!
         
         REST.createAccount(bank: bank) { (sucess) in
             if sucess == true{
@@ -40,6 +42,7 @@ class CreateAccountViewController: UIViewController {
                       self.present(alert, animated: true)
               })
                 //self.navigationController?.popViewController(animated: true)
+                //self.dismiss(animated: true, completion: nil)
                
                 print ("true")
             }
