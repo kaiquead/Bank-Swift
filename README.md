@@ -12,6 +12,6 @@ Este aplicativo é uma simulação de uma conta bancária. Nele podemos:
 Para as operações está sendo utilizado o consumo de uma API Rest em colaboração com um projeto opensource:  
 https://github.com/mablds/simple-bank-system  
   
-Este é um projeto educacional desenvolvido para a prática de um curso online de Desenvolvimento de apps iOS com Swift.  
+Este é um projeto educacional desenvolvido para a prática de conhecimentos adquiridos através de um curso online de Desenvolvimento de apps iOS com Swift.  
   
 #Ainda não concluído.
