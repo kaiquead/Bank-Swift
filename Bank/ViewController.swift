@@ -16,12 +16,19 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbInformations: UILabel!
     @IBOutlet weak var lbAccount: UILabel!
     @IBOutlet weak var lbSaldo: UILabel!
+    @IBOutlet weak var scOperations: UISegmentedControl!
+    @IBOutlet weak var lbDescription: UILabel!
+    @IBOutlet weak var lbDescription2: UILabel!
+    @IBOutlet weak var btnDepositar: UIButton!
+    @IBOutlet weak var btnSacar: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.setNavigationBarHidden(true, animated: true)
+        
+        
         REST.loadAnAccount(onComplete: { (bank) in
             self.bank = bank
             DispatchQueue.main.sync { //coloca na thread principal
@@ -40,14 +47,28 @@ class ViewController: UIViewController {
         }
     }
     
-    
     @IBAction func ReturnLogin(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     
+    @IBAction func changeOperation(_ sender: Any) {
+        switch scOperations.selectedSegmentIndex {
+        case 0:
+            lbDescription.text = "Deseja fazer um depósito?"
+            lbDescription2.text = "É simples e rápido, venha conferir!"
+            btnDepositar.isHidden = false
+            btnSacar.isHidden = true
+        case 1:
+            lbDescription.text = "Está precisando de um saque?"
+            lbDescription2.text = "Não perca tempo e faça agora mesmo!"
+            btnSacar.isHidden = false
+            btnDepositar.isHidden = true
+        default:
+            lbDescription.text = "Vai transferir?"
+            lbDescription2.text = "Basta clicar abaixo para iniciar a transferência!"
+        }
+    }
     
 }
 
 
-
-//
