@@ -33,7 +33,7 @@ class CreateAccountViewController: UIViewController {
         
         REST.createAccount(bank: bank) { (sucess) in
             if sucess == true{
-              let alert = UIAlertController(title: "Tudo certo!", message: "Sua conta foi criada com sucesso!", preferredStyle: .alert)
+              let alert = UIAlertController(title: "Tudo certo!", message: "Sua conta foi criada com sucesso!\n Um email foi enviado informando o número da conta bancária criada.", preferredStyle: .alert)
 
                    let ok = UIAlertAction(title: "Voltar para o login", style: .default, handler: { action in
                    })

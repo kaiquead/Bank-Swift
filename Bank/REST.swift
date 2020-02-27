@@ -26,6 +26,7 @@ class REST{
     private static let basePathCreateAccount = "https://simple-bank.herokuapp.com/bank/create"
     private static let basePathAnAccount = "https://simple-bank.herokuapp.com/bank/"
     private static let basePathDeposit = "https://simple-bank.herokuapp.com/bank/deposit"
+    private static let basePathWithdraw = "https://simple-bank.herokuapp.com/bank/withdraw"
     
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
@@ -239,6 +240,53 @@ class REST{
         }
         dataTask.resume()
     }
+    
+    class func withdraw (bank: WithdrawAccBank, onComplete: @escaping (Bool)->Void){
+        guard let url = URL(string: basePathWithdraw) else {
+        onComplete(false)
+        return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        guard let json = try? JSONEncoder().encode(bank) else {
+            onComplete(false)
+            return
+        }
+        request.httpBody = json
+        request.setValue(self.token, forHTTPHeaderField: "x-access-token")
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            if error == nil{
+                guard let response = response as? HTTPURLResponse,  let _ = data else{
+                    onComplete(false)
+                    return
+                }
+                if(response.statusCode==200){
+                    print (response.statusCode)
+                    if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                           print("Response data string:\n \(dataString)")
+                        //let arrayDataToken = dataString.components(separatedBy: "\"")
+                        //print(arrayDataToken[19])
+                        //self.token = arrayDataToken[19]
+                        //self.configuration.httpAdditionalHeaders = ["x-access-token": arrayDataToken[17]]
+                        //request.setValue(arrayDataToken[17], forHTTPHeaderField: "x-access-token")
+                        //self.session = URLSession(configuration: configuration)
+                       }
+                    onComplete(true)
+                }
+                else{
+                    print (response.statusCode)
+                    onComplete(false)
+                }
+                
+            } else{
+                onComplete(false)
+            }
+        }
+        dataTask.resume()
+    }
+    
+    
     
 }
 

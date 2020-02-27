@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EE002581240737F800368AF3 /* WithdrawAccBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE002580240737F800368AF3 /* WithdrawAccBank.swift */; };
+		EE00258324073C6900368AF3 /* WithdrawViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE00258224073C6900368AF3 /* WithdrawViewController.swift */; };
 		EE28E7562402365200C46EC0 /* DepositAccBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE28E7552402365200C46EC0 /* DepositAccBank.swift */; };
 		EE54AD3223DC8FD300499013 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD3123DC8FD300499013 /* AppDelegate.swift */; };
 		EE54AD3423DC8FD300499013 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD3323DC8FD300499013 /* SceneDelegate.swift */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE002580240737F800368AF3 /* WithdrawAccBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawAccBank.swift; sourceTree = "<group>"; };
+		EE00258224073C6900368AF3 /* WithdrawViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WithdrawViewController.swift; sourceTree = "<group>"; };
 		EE28E7552402365200C46EC0 /* DepositAccBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositAccBank.swift; sourceTree = "<group>"; };
 		EE54AD2E23DC8FD300499013 /* Bank.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bank.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE54AD3123DC8FD300499013 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -77,16 +81,18 @@
 				EEF1809523F844AB0067485B /* ActualAccount.swift */,
 				EE54AD4523DFAA8D00499013 /* Bank.swift */,
 				EE84DFD12402309700A72F95 /* CreateAccBank.swift */,
-				EE54AD4723DFABFF00499013 /* REST.swift */,
-				EE54AD4F23F2362000499013 /* DepositViewController.swift */,
 				EE28E7552402365200C46EC0 /* DepositAccBank.swift */,
+				EE002580240737F800368AF3 /* WithdrawAccBank.swift */,
+				EE54AD4723DFABFF00499013 /* REST.swift */,
+				EEF1809123F776580067485B /* CreateAccountViewController.swift */,
 				EE54AD4D23EF2B8500499013 /* LoginViewController.swift */,
+				EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */,
+				EE54AD3523DC8FD300499013 /* ViewController.swift */,
+				EE54AD4F23F2362000499013 /* DepositViewController.swift */,
+				EE00258224073C6900368AF3 /* WithdrawViewController.swift */,
 				EE54AD3123DC8FD300499013 /* AppDelegate.swift */,
 				EE54AD3323DC8FD300499013 /* SceneDelegate.swift */,
-				EE54AD3523DC8FD300499013 /* ViewController.swift */,
 				EE54AD3723DC8FD300499013 /* Main.storyboard */,
-				EEF1809123F776580067485B /* CreateAccountViewController.swift */,
-				EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */,
 				EE54AD3A23DC8FD500499013 /* Assets.xcassets */,
 				EE54AD3C23DC8FD500499013 /* LaunchScreen.storyboard */,
 				EE54AD3F23DC8FD500499013 /* Info.plist */,
@@ -167,11 +173,13 @@
 			files = (
 				EE54AD4E23EF2B8500499013 /* LoginViewController.swift in Sources */,
 				EE54AD3623DC8FD300499013 /* ViewController.swift in Sources */,
+				EE00258324073C6900368AF3 /* WithdrawViewController.swift in Sources */,
 				EE28E7562402365200C46EC0 /* DepositAccBank.swift in Sources */,
 				EE54AD4623DFAA8D00499013 /* Bank.swift in Sources */,
 				EEF1809623F844AB0067485B /* ActualAccount.swift in Sources */,
 				EE54AD5223F4B62A00499013 /* ErrorLoginViewController.swift in Sources */,
 				EE54AD3223DC8FD300499013 /* AppDelegate.swift in Sources */,
+				EE002581240737F800368AF3 /* WithdrawAccBank.swift in Sources */,
 				EE54AD4823DFABFF00499013 /* REST.swift in Sources */,
 				EEF1809223F776580067485B /* CreateAccountViewController.swift in Sources */,
 				EE54AD5023F2362000499013 /* DepositViewController.swift in Sources */,
