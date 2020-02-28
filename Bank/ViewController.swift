@@ -21,6 +21,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var lbDescription2: UILabel!
     @IBOutlet weak var btnDepositar: UIButton!
     @IBOutlet weak var btnSacar: UIButton!
+    @IBOutlet weak var btnTransferir: UIButton!
     
     
     override func viewDidLoad() {
@@ -58,14 +59,20 @@ class ViewController: UIViewController {
             lbDescription2.text = "É simples e rápido, venha conferir!"
             btnDepositar.isHidden = false
             btnSacar.isHidden = true
+            btnTransferir.isHidden = true
         case 1:
             lbDescription.text = "Está precisando de um saque?"
             lbDescription2.text = "Não perca tempo e faça agora mesmo!"
             btnSacar.isHidden = false
             btnDepositar.isHidden = true
+            btnTransferir.isHidden = true
         default:
             lbDescription.text = "Vai transferir?"
             lbDescription2.text = "Basta clicar abaixo para iniciar a transferência!"
+            btnTransferir.isHidden = false
+            btnSacar.isHidden = true
+            btnDepositar.isHidden = true
+            
         }
     }
     

@@ -18,7 +18,7 @@ class CreateAccountViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationController?.setNavigationBarHidden(false, animated: true)
         // Do any additional setup after loading the view.
     }
     
@@ -31,34 +31,34 @@ class CreateAccountViewController: UIViewController {
         bank.password = tfPassword.text!
         bank.email = tfEmail.text!
         
-        REST.createAccount(bank: bank) { (sucess) in
+        REST.createAccount(bank: bank, onComplete: { (sucess) in
             if sucess == true{
-              let alert = UIAlertController(title: "Tudo certo!", message: "Sua conta foi criada com sucesso!\n Um email foi enviado informando o número da conta bancária criada.", preferredStyle: .alert)
-
-                   let ok = UIAlertAction(title: "Voltar para o login", style: .default, handler: { action in
-                   })
-                   alert.addAction(ok)
-                   DispatchQueue.main.async(execute: {
-                      self.present(alert, animated: true)
-              })
-                //self.navigationController?.popViewController(animated: true)
-                //self.dismiss(animated: true, completion: nil)
-               
-                print ("true")
+                self.showAlertMessage(title: "Sucesso!", message: "A conta foi criada com sucesso! Um e-mail será enviado contendo o número da nova conta criada!")
             }
-            else {
-                let alert = UIAlertController(title: "Algo deu errado!", message: "Tente novamente criar sua conta!", preferredStyle: .alert)
-
-                     let Nok = UIAlertAction(title: "Tentar de novo", style: .default, handler: { action in
-                     })
-                     alert.addAction(Nok)
-                     DispatchQueue.main.async(execute: {
-                        self.present(alert, animated: true)
-                })
-                print ("false")
+            else{
+                self.showAlertMessage(title: "Erro!", message: "URL ou status code inválido. Contate o desenvolvedor")
+            }
+        }) { (error) in
+            switch error{
+            case .duplicatedEmail:
+                print("email duplicado")
+                self.showAlertMessage(title: "Erro!", message: "Esse e-mail já está cadastrado! Use outro email para a criação da conta")
+            default:
+                print ("Um erro foi detectado. Contacte o desenvolvedor!")
+                self.showAlertMessage(title: "Erro!", message: "Um erro foi detectado. Contacte o desenvolvedor!")
             }
             
         }
+    }
+    
+    func showAlertMessage(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+             let ok = UIAlertAction(title: "Voltar", style: .default, handler: { action in
+             })
+             alert.addAction(ok)
+             DispatchQueue.main.async(execute: {
+                self.present(alert, animated: true)
+        })
     }
     
 

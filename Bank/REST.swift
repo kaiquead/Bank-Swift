@@ -15,6 +15,7 @@ enum BankError{
     case noData
     case responseStatusCode(Code: Int)
     case invalidJSON
+    case duplicatedEmail
 }
 
 
@@ -27,6 +28,8 @@ class REST{
     private static let basePathAnAccount = "https://simple-bank.herokuapp.com/bank/"
     private static let basePathDeposit = "https://simple-bank.herokuapp.com/bank/deposit"
     private static let basePathWithdraw = "https://simple-bank.herokuapp.com/bank/withdraw"
+    private static let basePathTransfer = "https://simple-bank.herokuapp.com/bank/transfer"
+
     
     private static let configuration: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
@@ -168,7 +171,7 @@ class REST{
         dataTask.resume()
     }
     
-    class func createAccount (bank: CreateAccBank, onComplete: @escaping (Bool)->Void){
+    class func createAccount (bank: CreateAccBank, onComplete: @escaping (Bool)->Void, onError: @escaping (BankError)->Void){
         guard let url = URL(string: basePathCreateAccount) else {
         onComplete(false)
         return
@@ -177,7 +180,7 @@ class REST{
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
         guard let json = try? JSONEncoder().encode(bank) else {
-            onComplete(false)
+            onError(.invalidJSON)
             return
         }
         
@@ -185,12 +188,16 @@ class REST{
         let dataTask = session.dataTask(with: request) { (data, response, error) in
             if error == nil{
                 guard let response = response as? HTTPURLResponse,  let _ = data else{
-                    onComplete(false)
+                    onError(.noResponse)
                     return
                 }
                 if(response.statusCode==200){
                     print (response.statusCode)
                     onComplete(true)
+                }
+                if response.statusCode==401{
+                    print(response.statusCode)
+                    onError(.duplicatedEmail)
                 }
                 else{
                     print (response.statusCode)
@@ -198,7 +205,7 @@ class REST{
                 }
                 
             } else{
-                onComplete(false)
+                onError(.taskError(error: error!))
             }
         }
         dataTask.resume()
@@ -281,6 +288,45 @@ class REST{
                 
             } else{
                 onComplete(false)
+            }
+        }
+        dataTask.resume()
+    }
+    
+    class func transfer (bank: TransferAccBank, onComplete: @escaping (Bool)->Void, onError: @escaping (BankError)->Void){
+        guard let url = URL(string: basePathTransfer) else {
+            onError(.url)
+        return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "PUT"
+        guard let json = try? JSONEncoder().encode(bank) else {
+            onError(.invalidJSON)
+            return
+        }
+        request.httpBody = json
+        request.setValue(self.token, forHTTPHeaderField: "x-access-token")
+        let dataTask = session.dataTask(with: request) { (data, response, error) in
+            if error == nil{
+                guard let response = response as? HTTPURLResponse,  let _ = data else{
+                    onError(.noResponse)
+                    return
+                }
+                if(response.statusCode==200){
+                    print (response.statusCode)
+                    if let data = data, let dataString = String(data: data, encoding: .utf8) {
+                           print("Response data string:\n \(dataString)")
+                       }
+                    onComplete(true)
+                }
+                else{
+                    print (response.statusCode)
+                    onError(.responseStatusCode(Code: response.statusCode))
+                }
+                
+            } else{
+                onError(.taskError(error: error!))
             }
         }
         dataTask.resume()
