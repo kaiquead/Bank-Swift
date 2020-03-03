@@ -11,13 +11,15 @@ import UIKit
 class WithdrawViewController: UIViewController {
 
     var bank: WithdrawAccBank!
+    //@IBOutlet weak var tfAccount: UITextField!
+    //@IBOutlet weak var tfValue: UITextField!
+    
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfValue: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
     
     @IBAction func makeWithdraw(_ sender: Any) {
@@ -35,7 +37,7 @@ class WithdrawViewController: UIViewController {
                 print("Sacou!!")
                 DispatchQueue.main.async {
                     self.showAlertMessage(title: "Sucesso", message: "O saque foi feito com sucesso!")
-                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                 }
             }
             else{

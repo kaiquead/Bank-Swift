@@ -23,12 +23,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var btnSacar: UIButton!
     @IBOutlet weak var btnTransferir: UIButton!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+                    /*  -----configurações para a cor do Segment Control-----*/
+        let titleTextAttributesNormal = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        let titleTextAttributesSelected = [NSAttributedString.Key.foregroundColor: UIColor.orange]
+        scOperations.setTitleTextAttributes(titleTextAttributesNormal, for: .normal)
+        scOperations.setTitleTextAttributes(titleTextAttributesSelected, for: .selected)
+    }
+    
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        
         
         REST.loadAnAccount(onComplete: { (bank) in
             self.bank = bank
@@ -74,6 +80,19 @@ class ViewController: UIViewController {
             btnDepositar.isHidden = true
             
         }
+    }
+    
+    @IBAction func makeDeposit(_ sender: Any) {
+        performSegue(withIdentifier: "segueViewToDeposit", sender: nil)
+    }
+    
+    
+    @IBAction func makeWithdraw(_ sender: Any) {
+        performSegue(withIdentifier: "segueViewToWithdraw", sender: nil)
+    }
+    
+    @IBAction func makeTransfer(_ sender: Any) {
+        performSegue(withIdentifier: "segueViewToTransfer", sender: nil)
     }
     
 }

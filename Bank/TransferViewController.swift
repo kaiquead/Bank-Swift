@@ -49,8 +49,11 @@ class TransferViewController: UIViewController {
                 print ("JSON invalido")
             case .noResponse:
                 print ("Sem resposta")
-            case .responseStatusCode(Code: 2):
-                print ("response")
+            case .noValueTransfer:
+                print ("sem saldo")
+                self.showAlertMessage(title: "Erro", message: "Você não possui esse valor na conta de origem para ser feito a transferência!")
+            case .responseStatusCodeTransfer:
+                print ("Algum erro aconteceu. O status code não é 200 e nem 400")
             default:
                 print("Erro com DataTask")
             }

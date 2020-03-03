@@ -11,14 +11,13 @@ import UIKit
 class DepositViewController: UIViewController {
 
     var bank: DepositAccBank!
-    @IBOutlet weak var tfDepositValue: UITextField!
     @IBOutlet weak var tfAccount: UITextField!
-    
+    @IBOutlet weak var tfDepositValue: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
-    
     
     @IBAction func btnDeposit(_ sender: Any) {
         if bank == nil {
@@ -38,7 +37,7 @@ class DepositViewController: UIViewController {
                 print ("depositou")
                 DispatchQueue.main.async {
                     self.showAlertMessage(title: "Sucesso", message: "O depósito foi feito com sucesso!")
-                    self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                 }
                 
             }

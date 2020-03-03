@@ -16,6 +16,8 @@ enum BankError{
     case responseStatusCode(Code: Int)
     case invalidJSON
     case duplicatedEmail
+    case noValueTransfer
+    case responseStatusCodeTransfer
 }
 
 
@@ -320,9 +322,13 @@ class REST{
                        }
                     onComplete(true)
                 }
+                if (response.statusCode==400){
+                    print(response.statusCode)
+                    onError(.noValueTransfer)
+                }
                 else{
                     print (response.statusCode)
-                    onError(.responseStatusCode(Code: response.statusCode))
+                    onError(.responseStatusCodeTransfer)
                 }
                 
             } else{
