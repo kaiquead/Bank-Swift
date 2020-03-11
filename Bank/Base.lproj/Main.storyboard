@@ -733,22 +733,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="5RH-b4-c8P">
+                                <rect key="frame" x="155" y="441" width="64" height="49"/>
+                                <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="a2r-Hg-LdT" firstAttribute="top" secondItem="FGf-hQ-SKa" secondAttribute="bottom" constant="42.5" id="3Af-9Y-p9i"/>
                             <constraint firstItem="FGf-hQ-SKa" firstAttribute="leading" secondItem="Mox-qH-Wtl" secondAttribute="leading" constant="58" id="BFq-Tj-rz8"/>
+                            <constraint firstItem="a2r-Hg-LdT" firstAttribute="top" secondItem="5RH-b4-c8P" secondAttribute="bottom" constant="8" id="H9k-Uz-yVu"/>
                             <constraint firstItem="Mox-qH-Wtl" firstAttribute="trailing" secondItem="FGf-hQ-SKa" secondAttribute="trailing" constant="58.5" id="IQG-6Y-fot"/>
                             <constraint firstItem="Jec-pv-keT" firstAttribute="centerX" secondItem="FGf-hQ-SKa" secondAttribute="centerX" id="Ig4-v3-QbK"/>
                             <constraint firstItem="FGf-hQ-SKa" firstAttribute="top" secondItem="Jec-pv-keT" secondAttribute="bottom" constant="82.5" id="IoO-RJ-aAR"/>
                             <constraint firstItem="FGf-hQ-SKa" firstAttribute="centerY" secondItem="Mox-qH-Wtl" secondAttribute="centerY" id="WUU-ov-u7P"/>
                             <constraint firstItem="a2r-Hg-LdT" firstAttribute="leading" secondItem="Mox-qH-Wtl" secondAttribute="leading" constant="75" id="X7z-se-arq"/>
                             <constraint firstItem="Mox-qH-Wtl" firstAttribute="trailing" secondItem="a2r-Hg-LdT" secondAttribute="trailing" constant="75" id="ki2-NV-cVK"/>
+                            <constraint firstItem="5RH-b4-c8P" firstAttribute="centerX" secondItem="a2r-Hg-LdT" secondAttribute="centerX" id="mX5-FA-x09"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Mox-qH-Wtl"/>
                     </view>
                     <navigationItem key="navigationItem" id="AxT-HC-1j6"/>
                     <connections>
+                        <outlet property="aiSpinner" destination="5RH-b4-c8P" id="gls-m3-9Wl"/>
+                        <outlet property="btnIn" destination="bvv-eq-8eD" id="UkW-2F-xcw"/>
                         <outlet property="btnShowPassword" destination="k3g-oV-eeV" id="frl-aP-kH5"/>
                         <outlet property="tfAccount" destination="3rV-YO-buM" id="WhG-J1-dLe"/>
                         <outlet property="tfPassword" destination="xkP-qv-61e" id="0w1-Px-2Cv"/>
@@ -758,7 +766,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fir-85-CsW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="231.8840579710145" y="129.91071428571428"/>
+            <point key="canvasLocation" x="231.19999999999999" y="129.08545727136433"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="reo-3G-IaK">

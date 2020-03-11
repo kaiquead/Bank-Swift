@@ -16,17 +16,19 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnShowPassword: UIButton!
+    @IBOutlet weak var aiSpinner: UIActivityIndicatorView!
+    @IBOutlet weak var btnIn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         navigationController?.setNavigationBarHidden(true, animated: true)
+        aiSpinner.hidesWhenStopped = true
     }
     
     @IBAction func showFirstScreen(_ sender: UIStoryboardSegue) {
         //performSegue(withIdentifier: "firstSegue", sender: nil)
     }
-    
     
     @IBAction func loginAdd(_ sender: Any) {
         if bank == nil {
@@ -45,6 +47,12 @@ class LoginViewController: UIViewController {
             })
             return
         }
+        else{
+            DispatchQueue.main.async {
+                self.aiSpinner.startAnimating()
+            }
+            
+        }
         
         bank.account = integer(from: tfAccount)
         bank.password = tfPassword.text!
@@ -56,13 +64,18 @@ class LoginViewController: UIViewController {
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "firstSegue", sender: nil)
                 }
+                DispatchQueue.main.async {
+                    self.aiSpinner.stopAnimating()
+                }
             }
             else {
                 print ("false")
                 DispatchQueue.main.async {
                     self.performSegue(withIdentifier: "segueErrorLogin", sender: nil)
                 }
-                
+                DispatchQueue.main.async {
+                    self.aiSpinner.stopAnimating()
+                }
             }
             
         }
