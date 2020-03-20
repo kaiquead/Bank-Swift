@@ -25,6 +25,11 @@ class LoginViewController: UIViewController {
         navigationController?.setNavigationBarHidden(true, animated: true)
         aiSpinner.hidesWhenStopped = true
     }
+   override func viewDidDisappear(_ animated: Bool){
+        super.viewDidDisappear(true)
+        tfAccount.text = ""
+        tfPassword.text = ""
+    }
     
     @IBAction func showFirstScreen(_ sender: UIStoryboardSegue) {
         //performSegue(withIdentifier: "firstSegue", sender: nil)

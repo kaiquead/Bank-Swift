@@ -13,7 +13,7 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var tfOwner: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var tfEmail: UITextField!
-    
+    @IBOutlet weak var btnShowPassword: UIButton!
     var bank:CreateAccBank!
     
     override func viewDidLoad() {
@@ -48,6 +48,17 @@ class CreateAccountViewController: UIViewController {
                 self.showAlertMessage(title: "Erro!", message: "Um erro foi detectado. Contacte o desenvolvedor!")
             }
             
+        }
+    }
+    
+    @IBAction func showPassword(_ sender: Any) {
+        if self.tfPassword.isSecureTextEntry == false{
+            self.tfPassword.isSecureTextEntry = true
+            self.btnShowPassword.setTitle("Mostrar", for: .normal)
+        }
+        else{
+            self.tfPassword.isSecureTextEntry = false
+            self.btnShowPassword.setTitle("Esconder", for: .normal)
         }
     }
     

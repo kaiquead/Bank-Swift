@@ -32,8 +32,8 @@ class ViewController: UIViewController {
         scOperations.setTitleTextAttributes(titleTextAttributesSelected, for: .selected)
     }
     
-    override func viewDidAppear(_ animated: Bool){
-        super.viewDidAppear(true)
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: true)
         
         REST.loadAnAccount(onComplete: { (bank) in
@@ -80,8 +80,7 @@ class ViewController: UIViewController {
             btnDepositar.isHidden = true
             
         }
-    }
-    
+    }    
     @IBAction func makeDeposit(_ sender: Any) {
         performSegue(withIdentifier: "segueViewToDeposit", sender: nil)
     }
