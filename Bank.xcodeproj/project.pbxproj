@@ -63,6 +63,43 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE545C2D2469CA510090B734 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1809523F844AB0067485B /* ActualAccount.swift */,
+				EE54AD4523DFAA8D00499013 /* Bank.swift */,
+				EE84DFD12402309700A72F95 /* CreateAccBank.swift */,
+				EE28E7552402365200C46EC0 /* DepositAccBank.swift */,
+				EE002580240737F800368AF3 /* WithdrawAccBank.swift */,
+				EE3FEA7624087CC800F8E854 /* TransferAccBank.swift */,
+				EE54AD4723DFABFF00499013 /* REST.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EE545C2E2469CAB00090B734 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				EEF1809123F776580067485B /* CreateAccountViewController.swift */,
+				EE54AD4D23EF2B8500499013 /* LoginViewController.swift */,
+				EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */,
+				EE54AD3523DC8FD300499013 /* ViewController.swift */,
+				EE54AD4F23F2362000499013 /* DepositViewController.swift */,
+				EE00258224073C6900368AF3 /* WithdrawViewController.swift */,
+				EE3FEA7424087C8A00F8E854 /* TransferViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EE545C2F2469CACE0090B734 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EE54AD3723DC8FD300499013 /* Main.storyboard */,
+				EE54AD3C23DC8FD500499013 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EE54AD2523DC8FD300499013 = {
 			isa = PBXGroup;
 			children = (
@@ -82,25 +119,12 @@
 		EE54AD3023DC8FD300499013 /* Bank */ = {
 			isa = PBXGroup;
 			children = (
-				EEF1809523F844AB0067485B /* ActualAccount.swift */,
-				EE54AD4523DFAA8D00499013 /* Bank.swift */,
-				EE84DFD12402309700A72F95 /* CreateAccBank.swift */,
-				EE28E7552402365200C46EC0 /* DepositAccBank.swift */,
-				EE002580240737F800368AF3 /* WithdrawAccBank.swift */,
-				EE3FEA7624087CC800F8E854 /* TransferAccBank.swift */,
-				EE54AD4723DFABFF00499013 /* REST.swift */,
-				EEF1809123F776580067485B /* CreateAccountViewController.swift */,
-				EE54AD4D23EF2B8500499013 /* LoginViewController.swift */,
-				EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */,
-				EE54AD3523DC8FD300499013 /* ViewController.swift */,
-				EE54AD4F23F2362000499013 /* DepositViewController.swift */,
-				EE00258224073C6900368AF3 /* WithdrawViewController.swift */,
-				EE3FEA7424087C8A00F8E854 /* TransferViewController.swift */,
+				EE545C2D2469CA510090B734 /* Models */,
+				EE545C2F2469CACE0090B734 /* Views */,
+				EE545C2E2469CAB00090B734 /* Controllers */,
 				EE54AD3123DC8FD300499013 /* AppDelegate.swift */,
 				EE54AD3323DC8FD300499013 /* SceneDelegate.swift */,
-				EE54AD3723DC8FD300499013 /* Main.storyboard */,
 				EE54AD3A23DC8FD500499013 /* Assets.xcassets */,
-				EE54AD3C23DC8FD500499013 /* LaunchScreen.storyboard */,
 				EE54AD3F23DC8FD500499013 /* Info.plist */,
 			);
 			path = Bank;
