@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     //textField get the item to add
     var bank: Bank!
     var account: ActualAccount!
+    var numberFormt: NumberFormat!
     @IBOutlet weak var lbInformations: UILabel!
     @IBOutlet weak var lbAccount: UILabel!
     @IBOutlet weak var lbSaldo: UILabel!
@@ -33,6 +34,10 @@ class ViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool){
+        if numberFormt == nil{
+            numberFormt = NumberFormat()
+        }
+        
         super.viewWillAppear(true)
         navigationController?.setNavigationBarHidden(true, animated: true)
         
@@ -41,7 +46,8 @@ class ViewController: UIViewController {
             DispatchQueue.main.sync { //coloca na thread principal
                 self.lbInformations.text = bank.owner
                 self.lbAccount.text = "Conta: " + String(bank.account)
-                self.lbSaldo.text = " Saldo: R$ " + String(bank.value)
+                //self.lbSaldo.text = " Saldo: R$ " + String(bank.value)
+                self.lbSaldo.text = "Saldo: " + self.numberFormt.getFormattedValue(of: bank.value)
             }
         
             

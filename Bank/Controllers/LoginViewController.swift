@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
     
     var bank: Bank!
     var account: ActualAccount!
-    @IBOutlet weak var tfAccount: UITextField!
+    @IBOutlet weak var tfEmail: UITextField!
     @IBOutlet weak var tfPassword: UITextField!
     @IBOutlet weak var btnShowPassword: UIButton!
     @IBOutlet weak var aiSpinner: UIActivityIndicatorView!
@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
     }
    override func viewDidDisappear(_ animated: Bool){
         super.viewDidDisappear(true)
-        tfAccount.text = ""
+        tfEmail.text = ""
         tfPassword.text = ""
     }
     
@@ -42,7 +42,7 @@ class LoginViewController: UIViewController {
         if account == nil{
             account = ActualAccount()
         }
-        if tfAccount.text == "" || tfPassword.text == ""{
+        if tfEmail.text == "" || tfPassword.text == ""{
             let alert = UIAlertController(title: "Erro para entrar", message: "Conta ou Senha em branco. Preencha com valores válidos!", preferredStyle: .alert)
                  let ok = UIAlertAction(title: "Voltar", style: .default, handler: { action in
                  })
@@ -59,9 +59,9 @@ class LoginViewController: UIViewController {
             
         }
         
-        bank.account = integer(from: tfAccount)
+        bank.email = tfEmail.text!
         bank.password = tfPassword.text!
-        account.setActualAccount(account: integer(from: tfAccount))
+        //account.setActualAccount(account: integer(from: tfAccount))
         
         REST.login(bank: bank) { (sucess) in
             if sucess == true{
@@ -98,6 +98,12 @@ class LoginViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func generateTestsCredentials(_ sender: Any) {
+        tfEmail.text = "teste@teste.com"
+        tfPassword.text = "teste"
+    }
+    
     
 
     func integer(from textField: UITextField) -> Int {

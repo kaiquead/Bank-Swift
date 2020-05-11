@@ -17,6 +17,7 @@ class Bank: Codable{
     var owner: String = ""
     var password: String = ""
     var __v: Int = 0
+    var email: String = ""
     }
 
 //{"value":0,"admin":false,"_id":"5e4743ba16289f002426ed37","account":3041,"owner":"teste da silva","password":"teste","__v":0}

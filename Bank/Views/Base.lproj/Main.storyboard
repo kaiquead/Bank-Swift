@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ItB-Ai-i9d">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ItB-Ai-i9d">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -670,13 +670,13 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="0gy-LG-BGV">
                                         <rect key="frame" x="0.0" y="0.0" width="258.5" height="67.5"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conta" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-9g-JPS">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="E-mail" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DG3-9g-JPS">
                                                 <rect key="frame" x="0.0" y="0.0" width="258.5" height="26.5"/>
                                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o número da conta" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rV-YO-buM">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Digite o e-mail vinculado a sua conta" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3rV-YO-buM">
                                                 <rect key="frame" x="0.0" y="33.5" width="258.5" height="34"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" textContentType="username"/>
@@ -748,6 +748,14 @@
                                 <rect key="frame" x="155" y="441" width="64" height="49"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iyk-1v-8UM">
+                                <rect key="frame" x="117" y="53" width="141" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Gerar conta de teste"/>
+                                <connections>
+                                    <action selector="generateTestsCredentials:" destination="bZ0-hn-GoD" eventType="touchUpInside" id="Wml-DC-8nD"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -769,7 +777,7 @@
                         <outlet property="aiSpinner" destination="5RH-b4-c8P" id="gls-m3-9Wl"/>
                         <outlet property="btnIn" destination="bvv-eq-8eD" id="UkW-2F-xcw"/>
                         <outlet property="btnShowPassword" destination="k3g-oV-eeV" id="frl-aP-kH5"/>
-                        <outlet property="tfAccount" destination="3rV-YO-buM" id="WhG-J1-dLe"/>
+                        <outlet property="tfEmail" destination="3rV-YO-buM" id="rTq-eb-RRb"/>
                         <outlet property="tfPassword" destination="xkP-qv-61e" id="0w1-Px-2Cv"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="firstSegue" id="kus-Vu-NGi"/>
                         <segue destination="Rxp-Ma-Eyv" kind="presentation" identifier="segueErrorLogin" id="JKR-LN-gIo"/>

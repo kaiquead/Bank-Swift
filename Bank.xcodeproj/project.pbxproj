@@ -24,6 +24,7 @@
 		EE54AD5023F2362000499013 /* DepositViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD4F23F2362000499013 /* DepositViewController.swift */; };
 		EE54AD5223F4B62A00499013 /* ErrorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */; };
 		EE84DFD22402309700A72F95 /* CreateAccBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE84DFD12402309700A72F95 /* CreateAccBank.swift */; };
+		EEDEA3822469DC9100B67636 /* NumberFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDEA3812469DC9100B67636 /* NumberFormat.swift */; };
 		EEF1809223F776580067485B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1809123F776580067485B /* CreateAccountViewController.swift */; };
 		EEF1809623F844AB0067485B /* ActualAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1809523F844AB0067485B /* ActualAccount.swift */; };
 /* End PBXBuildFile section */
@@ -48,6 +49,7 @@
 		EE54AD4F23F2362000499013 /* DepositViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DepositViewController.swift; sourceTree = "<group>"; };
 		EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLoginViewController.swift; sourceTree = "<group>"; };
 		EE84DFD12402309700A72F95 /* CreateAccBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccBank.swift; sourceTree = "<group>"; };
+		EEDEA3812469DC9100B67636 /* NumberFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormat.swift; sourceTree = "<group>"; };
 		EEF1809123F776580067485B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		EEF1809523F844AB0067485B /* ActualAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +75,7 @@
 				EE002580240737F800368AF3 /* WithdrawAccBank.swift */,
 				EE3FEA7624087CC800F8E854 /* TransferAccBank.swift */,
 				EE54AD4723DFABFF00499013 /* REST.swift */,
+				EEDEA3812469DC9100B67636 /* NumberFormat.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				EE28E7562402365200C46EC0 /* DepositAccBank.swift in Sources */,
 				EE54AD4623DFAA8D00499013 /* Bank.swift in Sources */,
 				EEF1809623F844AB0067485B /* ActualAccount.swift in Sources */,
+				EEDEA3822469DC9100B67636 /* NumberFormat.swift in Sources */,
 				EE54AD5223F4B62A00499013 /* ErrorLoginViewController.swift in Sources */,
 				EE3FEA7724087CC800F8E854 /* TransferAccBank.swift in Sources */,
 				EE54AD3223DC8FD300499013 /* AppDelegate.swift in Sources */,
