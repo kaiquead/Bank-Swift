@@ -12,6 +12,7 @@ import AVFoundation
 class DepositViewController: UIViewController {
 
     var bank: DepositAccBank!
+    var numberFormat: NumberFormat!
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfDepositValue: UITextField!
     
@@ -24,14 +25,22 @@ class DepositViewController: UIViewController {
         if bank == nil {
             bank = DepositAccBank()
         }
+        if numberFormat == nil{
+            numberFormat = NumberFormat()
+        }
         if tfAccount.text == "" || tfDepositValue.text == ""{
             showAlertMessage(title: "Erro!", message: "Preencha todos os campos!")
             return
         }
         
+        if (tfDepositValue.text?.contains(","))!{
+            showAlertMessage(title: "Erro!", message: "O valor não pode ter virgula. ")
+            return
+        }
+        
         
         bank.account = Int(tfAccount.text!)!
-        bank.value =  Double(tfDepositValue.text!)!
+        bank.value = numberFormat.formatToDouble(tfDepositValue.text!)
         
         REST.deposit(bank: bank) { (sucess) in
             if sucess == true{

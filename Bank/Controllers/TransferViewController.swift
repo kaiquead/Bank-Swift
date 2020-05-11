@@ -11,6 +11,7 @@ import UIKit
 class TransferViewController: UIViewController {
 
     var bank: TransferAccBank!
+    var numberFormat: NumberFormat!
     @IBOutlet weak var tfValue: UITextField!
     @IBOutlet weak var tfIncAccount: UITextField!
     
@@ -27,15 +28,22 @@ class TransferViewController: UIViewController {
         if bank == nil{
             bank = TransferAccBank()
         }
+        if numberFormat == nil{
+            numberFormat = NumberFormat()
+        }
         if tfValue.text == "" || tfIncAccount.text == "" || tfOutAccount.text == ""{
             showAlertMessage(title: "Erro!", message: "Preencha todos os campos!")
         }
         if tfOutAccount.text == tfIncAccount.text{
             showAlertMessage(title: "Erro!", message: "Você não pode transferir para a mesma conta! Digite uma conta diferente")
         }
+        if (tfValue.text?.contains(","))!{
+            showAlertMessage(title: "Erro!", message: "O valor não pode ter virgula. ")
+            return
+        }
         bank.outAccount = Int(tfOutAccount.text!)!
         bank.incAccount = Int(tfIncAccount.text!)!
-        bank.value = Double(tfValue.text!)!
+        bank.value = numberFormat.formatToDouble(tfValue.text!)
         
         REST.transfer(bank: bank, onComplete: { (sucess) in
             if sucess == true{

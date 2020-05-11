@@ -22,4 +22,9 @@ class NumberFormat{
         formatter.alwaysShowsDecimalSeparator = true
         return formatter.string(for: value)!
     }
+    
+    func formatToDouble(_ string: String) ->Double{
+        formatter.numberStyle = .none
+        return formatter.number(from: string)!.doubleValue
+    }
 }

@@ -11,8 +11,7 @@ import UIKit
 class WithdrawViewController: UIViewController {
 
     var bank: WithdrawAccBank!
-    //@IBOutlet weak var tfAccount: UITextField!
-    //@IBOutlet weak var tfValue: UITextField!
+    var numberFormat: NumberFormat!
     
     @IBOutlet weak var tfAccount: UITextField!
     @IBOutlet weak var tfValue: UITextField!
@@ -26,12 +25,20 @@ class WithdrawViewController: UIViewController {
         if bank == nil {
             bank = WithdrawAccBank()
         }
+        if numberFormat == nil{
+            numberFormat = NumberFormat()
+        }
         if tfAccount.text == "" || tfValue.text == ""{
             showAlertMessage(title: "Erro", message: "Preencha todos os campos!")
             return
         }
+        if (tfValue.text?.contains(","))!{
+            showAlertMessage(title: "Erro!", message: "O valor não pode ter virgula. ")
+            return
+        }
         bank.account = Int(tfAccount.text!)!
-        bank.value = Double(tfValue.text!)!
+        bank.value = numberFormat.formatToDouble(tfValue.text!)
+        
         REST.withdraw(bank: bank) { (sucess) in
             if sucess == true{
                 print("Sacou!!")
