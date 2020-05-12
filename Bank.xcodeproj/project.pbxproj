@@ -25,6 +25,7 @@
 		EE54AD5223F4B62A00499013 /* ErrorLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */; };
 		EE84DFD22402309700A72F95 /* CreateAccBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE84DFD12402309700A72F95 /* CreateAccBank.swift */; };
 		EEDEA3822469DC9100B67636 /* NumberFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDEA3812469DC9100B67636 /* NumberFormat.swift */; };
+		EEDEA384246B2B7400B67636 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEDEA383246B2B7400B67636 /* LoginResponse.swift */; };
 		EEF1809223F776580067485B /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1809123F776580067485B /* CreateAccountViewController.swift */; };
 		EEF1809623F844AB0067485B /* ActualAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = EEF1809523F844AB0067485B /* ActualAccount.swift */; };
 /* End PBXBuildFile section */
@@ -50,6 +51,7 @@
 		EE54AD5123F4B62A00499013 /* ErrorLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorLoginViewController.swift; sourceTree = "<group>"; };
 		EE84DFD12402309700A72F95 /* CreateAccBank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccBank.swift; sourceTree = "<group>"; };
 		EEDEA3812469DC9100B67636 /* NumberFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormat.swift; sourceTree = "<group>"; };
+		EEDEA383246B2B7400B67636 /* LoginResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
 		EEF1809123F776580067485B /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		EEF1809523F844AB0067485B /* ActualAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActualAccount.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -76,6 +78,7 @@
 				EE3FEA7624087CC800F8E854 /* TransferAccBank.swift */,
 				EE54AD4723DFABFF00499013 /* REST.swift */,
 				EEDEA3812469DC9100B67636 /* NumberFormat.swift */,
+				EEDEA383246B2B7400B67636 /* LoginResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -206,6 +209,7 @@
 			files = (
 				EE54AD4E23EF2B8500499013 /* LoginViewController.swift in Sources */,
 				EE3FEA7524087C8A00F8E854 /* TransferViewController.swift in Sources */,
+				EEDEA384246B2B7400B67636 /* LoginResponse.swift in Sources */,
 				EE54AD3623DC8FD300499013 /* ViewController.swift in Sources */,
 				EE00258324073C6900368AF3 /* WithdrawViewController.swift in Sources */,
 				EE28E7562402365200C46EC0 /* DepositAccBank.swift in Sources */,

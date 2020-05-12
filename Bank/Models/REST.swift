@@ -150,15 +150,11 @@ class REST{
                 }
                 if(response.statusCode==200){
                     print (response.statusCode)
-                    if let data = data, let dataString = String(data: data, encoding: .utf8) {
-                           print("Response data string:\n \(dataString)")
-                        let arrayDataToken = dataString.components(separatedBy: "\"")
-                        print(arrayDataToken[19])
-                        self.token = arrayDataToken[19]
-                        //self.configuration.httpAdditionalHeaders = ["x-access-token": arrayDataToken[17]]
-                        //request.setValue(arrayDataToken[17], forHTTPHeaderField: "x-access-token")
-                        //self.session = URLSession(configuration: configuration)
-                       }
+                    if let data = data {
+                        let dataResponse = try! JSONDecoder().decode(LoginResponse.self, from: data)
+                        self.token = dataResponse.token
+                        account.setActualAccount(account: dataResponse.account)
+                    }
                     onComplete(true)
                 }
                 else{
